@@ -8,17 +8,11 @@ public class Joueur extends Acteur{
 	public Joueur(String club, double euroMillions, String nom, String prenom, int age) {
 		super(nom, prenom, age);
 		this.club = club;
-		this.salaire = calculSalaire(euroMillions);
+		this.salaire = Math.random() * euroMillions;
 	}
 	
 	public Joueur(double euroMillions, String nom, String prenom, int age) {
-		super(nom, prenom, age);
-		this.club = "Knysna Syndrome Club";
-		this.salaire = calculSalaire(euroMillions);
-	}
-	
-	private double calculSalaire(double euroMillions){
-		return Math.random() * euroMillions;
+		this("Knysna Syndrome Club", euroMillions, nom, prenom, age);
 	}
 
 	public String getClub() {
